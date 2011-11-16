@@ -94,6 +94,7 @@ typedef struct key_data_t {
 
 
 int open_tcp_socket(char *hostname, unsigned short *port);
+int open_udp_socket(char *hostname, unsigned short *port);
 int get_tcp_connect_by_host(int sd, char *host, u_int16_t destport);
 int get_tcp_connect(int sd, struct sockaddr_in dest_addr);
 int bind_host(int sd, char *hostname, unsigned long ulAddr,unsigned short *port);

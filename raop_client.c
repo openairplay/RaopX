@@ -196,11 +196,20 @@ static int raopcl_stream_connect(raopcl_data_t *raopcld)
 	if((raopcld->sfd=open_tcp_socket(NULL, &myport))==-1) return -1;
 	if(get_tcp_connect_by_host(raopcld->sfd, raopcld->addr,
 				   rtspcl_get_server_port(raopcld->rtspcl))) {
-		ERRMSG("%s: connect failed\n", __func__);
 		close(raopcld->sfd);
-		raopcld->sfd=-1;
-		return -1;
+		if((raopcld->sfd=open_udp_socket(NULL, &myport))==-1) return -1;
+		if(get_tcp_connect_by_host(raopcld->sfd, raopcld->addr,
+								   rtspcl_get_server_port(raopcld->rtspcl))) {
+			ERRMSG("%s: connect failed\n", __func__);
+			close(raopcld->sfd);
+			raopcld->sfd=-1;
+			return -1;
+		}
+		else
+			printf("RAOP stream connected via UDP\n");
 	}
+	else
+		printf("RAOP stream connected via TCP\n");
 	return 0;
 }
 

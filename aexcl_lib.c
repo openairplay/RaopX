@@ -48,6 +48,27 @@ int open_tcp_socket(char *hostname, unsigned short *port)
 }
 
 /*
+ * open udp port
+ */
+int open_udp_socket(char *hostname, unsigned short *port)
+{
+	int sd;
+	
+	/* socket creation */
+	sd = socket(AF_INET, SOCK_DGRAM, 0);
+	if(sd<0) {
+		ERRMSG("cannot create tcp socket\n");
+		return -1;
+	}
+	if(bind_host(sd, hostname,0, port)) {
+		close(sd);
+		return -1;
+	}
+	
+	return sd;
+}
+
+/*
  * create tcp connection
  * as long as the socket is not non-blocking, this can block the process
  * nsport is network byte order
