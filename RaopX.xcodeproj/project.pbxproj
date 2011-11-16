@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A411C6F1008D0A900AED61E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A411C6C1008D0A900AED61E /* AudioToolbox.framework */; };
+		5A411C701008D0A900AED61E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A411C6D1008D0A900AED61E /* CoreAudio.framework */; };
+		5A411C711008D0A900AED61E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A411C6E1008D0A900AED61E /* CoreFoundation.framework */; };
+		5A9ADC9310201061007C1F2A /* zero_conf.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A9ADC9110201061007C1F2A /* zero_conf.c */; };
+		5AD03FA9100659EE00E38E67 /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03F8E100659EE00E38E67 /* aes.c */; };
+		5AD03FAA100659EE00E38E67 /* aexcl_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03F90100659EE00E38E67 /* aexcl_lib.c */; };
+		5AD03FAB100659EE00E38E67 /* audio_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03F92100659EE00E38E67 /* audio_stream.c */; };
+		5AD03FAC100659EE00E38E67 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03F94100659EE00E38E67 /* base64.c */; };
+		5AD03FB1100659EE00E38E67 /* pcm_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03F9E100659EE00E38E67 /* pcm_stream.c */; };
+		5AD03FB2100659EE00E38E67 /* raop_client.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03FA0100659EE00E38E67 /* raop_client.c */; };
+		5AD03FB3100659EE00E38E67 /* raop_play.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03FA2100659EE00E38E67 /* raop_play.c */; };
+		5AD03FB4100659EE00E38E67 /* rtsp_client.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD03FA4100659EE00E38E67 /* rtsp_client.c */; };
+		5AD94F84101891EF00C22760 /* audio_queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD94F83101891EF00C22760 /* audio_queue.c */; };
+		8DD76F6A0486A84900D96B5E /* RaopX.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* RaopX.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* RaopX.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5A411C6C1008D0A900AED61E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		5A411C6D1008D0A900AED61E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		5A411C6E1008D0A900AED61E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		5A8A2E69109750C500683623 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		5A9ADC9110201061007C1F2A /* zero_conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zero_conf.c; sourceTree = "<group>"; };
+		5A9ADC9210201061007C1F2A /* zero_conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zero_conf.h; sourceTree = "<group>"; };
+		5AD03F8E100659EE00E38E67 /* aes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
+		5AD03F8F100659EE00E38E67 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		5AD03F90100659EE00E38E67 /* aexcl_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aexcl_lib.c; sourceTree = "<group>"; };
+		5AD03F91100659EE00E38E67 /* aexcl_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aexcl_lib.h; sourceTree = "<group>"; };
+		5AD03F92100659EE00E38E67 /* audio_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_stream.c; sourceTree = "<group>"; };
+		5AD03F93100659EE00E38E67 /* audio_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_stream.h; sourceTree = "<group>"; };
+		5AD03F94100659EE00E38E67 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		5AD03F95100659EE00E38E67 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		5AD03F9E100659EE00E38E67 /* pcm_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pcm_stream.c; sourceTree = "<group>"; };
+		5AD03F9F100659EE00E38E67 /* pcm_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcm_stream.h; sourceTree = "<group>"; };
+		5AD03FA0100659EE00E38E67 /* raop_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raop_client.c; sourceTree = "<group>"; };
+		5AD03FA1100659EE00E38E67 /* raop_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raop_client.h; sourceTree = "<group>"; };
+		5AD03FA2100659EE00E38E67 /* raop_play.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = raop_play.c; sourceTree = "<group>"; };
+		5AD03FA3100659EE00E38E67 /* raop_play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raop_play.h; sourceTree = "<group>"; };
+		5AD03FA4100659EE00E38E67 /* rtsp_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtsp_client.c; sourceTree = "<group>"; };
+		5AD03FA5100659EE00E38E67 /* rtsp_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtsp_client.h; sourceTree = "<group>"; };
+		5AD94F82101891EF00C22760 /* audio_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_queue.h; sourceTree = "<group>"; };
+		5AD94F83101891EF00C22760 /* audio_queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_queue.c; sourceTree = "<group>"; };
+		8DD76F6C0486A84900D96B5E /* RaopX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RaopX; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* RaopX.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = RaopX.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A411C6F1008D0A900AED61E /* AudioToolbox.framework in Frameworks */,
+				5A411C701008D0A900AED61E /* CoreAudio.framework in Frameworks */,
+				5A411C711008D0A900AED61E /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* RaopX */ = {
+			isa = PBXGroup;
+			children = (
+				5A8A2E69109750C500683623 /* COPYING */,
+				5A411C6B1008D08D00AED61E /* Frameworks */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = RaopX;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5AD03F8E100659EE00E38E67 /* aes.c */,
+				5AD03F8F100659EE00E38E67 /* aes.h */,
+				5AD03F90100659EE00E38E67 /* aexcl_lib.c */,
+				5AD03F91100659EE00E38E67 /* aexcl_lib.h */,
+				5AD03F92100659EE00E38E67 /* audio_stream.c */,
+				5AD03F93100659EE00E38E67 /* audio_stream.h */,
+				5AD94F83101891EF00C22760 /* audio_queue.c */,
+				5AD94F82101891EF00C22760 /* audio_queue.h */,
+				5AD03F94100659EE00E38E67 /* base64.c */,
+				5AD03F95100659EE00E38E67 /* base64.h */,
+				5AD03F9E100659EE00E38E67 /* pcm_stream.c */,
+				5AD03F9F100659EE00E38E67 /* pcm_stream.h */,
+				5AD03FA0100659EE00E38E67 /* raop_client.c */,
+				5AD03FA1100659EE00E38E67 /* raop_client.h */,
+				5AD03FA2100659EE00E38E67 /* raop_play.c */,
+				5AD03FA3100659EE00E38E67 /* raop_play.h */,
+				5AD03FA4100659EE00E38E67 /* rtsp_client.c */,
+				5AD03FA5100659EE00E38E67 /* rtsp_client.h */,
+				5A9ADC9110201061007C1F2A /* zero_conf.c */,
+				5A9ADC9210201061007C1F2A /* zero_conf.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* RaopX */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A411C6B1008D08D00AED61E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A411C6C1008D0A900AED61E /* AudioToolbox.framework */,
+				5A411C6D1008D0A900AED61E /* CoreAudio.framework */,
+				5A411C6E1008D0A900AED61E /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* RaopX.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* RaopX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "RaopX" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaopX;
+			productInstallPath = "$(HOME)/bin";
+			productName = RaopX;
+			productReference = 8DD76F6C0486A84900D96B5E /* RaopX */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "RaopX" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* RaopX */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* RaopX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AD03FA9100659EE00E38E67 /* aes.c in Sources */,
+				5AD03FAA100659EE00E38E67 /* aexcl_lib.c in Sources */,
+				5AD03FAB100659EE00E38E67 /* audio_stream.c in Sources */,
+				5AD03FAC100659EE00E38E67 /* base64.c in Sources */,
+				5AD03FB1100659EE00E38E67 /* pcm_stream.c in Sources */,
+				5AD03FB2100659EE00E38E67 /* raop_client.c in Sources */,
+				5AD03FB3100659EE00E38E67 /* raop_play.c in Sources */,
+				5AD03FB4100659EE00E38E67 /* rtsp_client.c in Sources */,
+				5AD94F84101891EF00C22760 /* audio_queue.c in Sources */,
+				5A9ADC9310201061007C1F2A /* zero_conf.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = RaopX;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = RaopX;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include/**";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lsamplerate",
+					"-lcrypto",
+					"-lssl",
+				);
+				PREBINDING = NO;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include/**";
+				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
+					"-lsamplerate",
+				);
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "RaopX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "RaopX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
