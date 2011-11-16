@@ -205,6 +205,10 @@ void deleteFileIfExists (const char * fname) {
 	}
 }
 
+void usage(char* argv0) {
+	printf("usage: %s [-h|--host <host>] [-p|--port <port>]\n", argv0);
+}
+
 int main(int argc, char *argv[])
 {
 	char *host=NULL;
@@ -228,32 +232,48 @@ int main(int argc, char *argv[])
 
 	deleteFileIfExists(fname); //Delete TempBufferFile if exists
 	
-	/************** Zero Conf ********************/
-	printf("\nSearching for RAOP capable devices\n");
-	DNSServiceErrorType error = ZCDNSServiceBrowse();
-	if (error) fprintf(stderr, "DNSServiceDiscovery returned %d\n", error);
-	if (numResolved == 0) {
-		printf("No RAOP capable devices found\n");
-		return -1;
-	}else if (numResolved == 1) {
-		host = hostPortArray[0].raop_host;
-		port = hostPortArray[0].raop_port;
-	}else {
-		printf("\nMultiple devices found:\n");
-		for (i=0; i < numResolved; i++) {
-			printf("%i) %s\n",i, hostPortArray[i].raop_host);
+	for(i = 1; argv[i]; ++i) {
+		if(strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--host") == 0) {
+			if(!argv[++i]) { usage(argv[0]); return -1; }
+			host = argv[i];
 		}
-		printf("\nWhich device would you like to use\nEnter number and press <Return>: ");
-		scanf("%d", &i);
-		getchar(); // To remove newline
-		if (i > numResolved) {
-			printf("Not a valid menu option. Program terminating\n\n"); 
-			return -1;
+		if(strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--port") == 0) {
+			if(!argv[++i]) { usage(argv[0]); return -1; }
+			port = atoi(argv[i]);
 		}
-		host = hostPortArray[i].raop_host;
-		port = hostPortArray[i].raop_port;
 	}
 	
+	if(host) {
+		printf("\nUsing host %s:%i\n", host, port);
+	}
+	else {
+		/************** Zero Conf ********************/
+		printf("\nSearching for RAOP capable devices\n");
+		DNSServiceErrorType error = ZCDNSServiceBrowse();
+		if (error) fprintf(stderr, "DNSServiceDiscovery returned %d\n", error);
+		if (numResolved == 0) {
+			printf("No RAOP capable devices found\n");
+			usage(argv[0]);
+			return -1;
+		}else if (numResolved == 1) {
+			host = hostPortArray[0].raop_host;
+			port = hostPortArray[0].raop_port;
+		}else {
+			printf("\nMultiple devices found:\n");
+			for (i=0; i < numResolved; i++) {
+				printf("%i) %s\n",i, hostPortArray[i].raop_host);
+			}
+			printf("\nWhich device would you like to use\nEnter number and press <Return>: ");
+			scanf("%d", &i);
+			getchar(); // To remove newline
+			if (i > numResolved) {
+				printf("Not a valid menu option. Program terminating\n\n"); 
+				return -1;
+			}
+			host = hostPortArray[i].raop_host;
+			port = hostPortArray[i].raop_port;
+		}
+	}
 	
 
 	
