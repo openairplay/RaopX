@@ -1,0 +1,29 @@
+#!/bin/sh
+# mkinstalldirs path_name prefix_dir
+# if filename is /dir1/dir2/ and no prefix_dir, create /dir1, /dir1/dir2
+# if filename is /dir1/dir2/fname and no prefix_dir, create /dir1, /dir1/dir2
+# if filename is dir1/dir2/fname and no prefix_dir, create ./dir1, ./dir1/dir2
+# if filename is dir1/dir2/fname and prefix_dir is pre, create ./pre/dir1, ./pre/dir1/dir2
+#   if filename is /dir1/dir2/fname and prefix_dir is pre, the same as the above
+# if filename is dir1/dir2/fname and prefix_dir is /pre create /pre/dir1, /pre/dir1/dir2
+#   if filename is /dir1/dir2/fname and prefix_dir is /pre, the same as the above
+path_elements=`dirname $1 | sed 's:/: :g'`
+if echo $1 | grep '.*/$' > /dev/null ; then
+    edir=`echo $1 | sed -n 's:.*/\\([^/]*\\)/$:\\1:p'`
+    if [ -z "$edir" ]; then
+	edir=`echo $1 | sed -n 's:\\([^/]*\\)/$:\\1:p'`
+    fi
+    path_elements="${path_elements} $edir"
+fi
+if echo $1 | grep '^/.*' > /dev/null ; then
+    path="/"
+else
+    path=""
+fi
+if [ -n "$2" ]; then
+    path="$2/"
+fi
+for i in $path_elements; do
+    path=${path}$i/
+    if [ ! -d $path ]; then install -d $path; fi
+done

@@ -1,0 +1,47 @@
+SHELL = @SHELL@
+CC = @CC@
+DEFS = @DEFS@
+LIBS = @LIBS@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+bindir = @bindir@
+INSTALL = @INSTALL@
+top_srcdir = @top_srcdir@
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+
+TARGET=RaopX
+DESTDIR =
+
+CFLAGS=-Wall
+OBJS := raop_play.o raop_client.o rtsp_client.o aexcl_lib.o base64.o aes.o audio_queue.o \
+audio_stream.o zero_conf.o pcm_stream.o
+
+all: $(TARGET)
+
+RaopX: $(OBJS)
+	$(CC) -o $@  -lssl -lsamplerate -lcrypto -framework CoreFoundation -framework CoreAudio -framework AudioToolbox $^
+
+install:
+	$(mkinstalldirs) $(DESTDIR)$(bindir)/
+	$(INSTALL) -s $(TARGET) $(DESTDIR)$(bindir)
+
+uninstall:
+	rm -f $(DESTDIR)$(bindir)/$(TARGET)
+
+clean:
+	rm -f *.o $(TARGET)
+
+distclean:
+
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+COMMONE_HEADERS := aexcl_lib.h raop_play.h raop_client.h rtsp_client.h audio_queue.h \
+zero_conf.h
+
+aexcl_lib.o: $(COMMONE_HEADERS)
+raop_play.o: $(COMMONE_HEADERS)
+raop_client.o: $(COMMONE_HEADERS)
+rtsp_client.o: $(COMMONE_HEADERS)
+audio_queue.o: $(COMMONE_HEADERS)
+zero_conf.o: $(COMMONE_HEADERS)
