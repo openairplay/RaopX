@@ -35,6 +35,7 @@
 #define END_C_DECLS
 #endif
 
+#define MIN(X,Y) (((X) < (Y)) ? (X) : (Y))
 
 BEGIN_C_DECLS
 

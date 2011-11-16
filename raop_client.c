@@ -148,6 +148,7 @@ static int fd_event_callback(void *p, int flags)
 	if(!p) return -1;
 	raopcld=(raopcl_data_t *)p;
 	if(flags&RAOP_FD_READ){
+		return 0;
 		i=read(raopcld->sfd,buf,sizeof(buf));
 		if(i>0){
 			rsize=GET_BIGENDIAN_INT(buf+0x2c);
@@ -170,7 +171,7 @@ static int fd_event_callback(void *p, int flags)
 		ERRMSG("%s: write is called with remsize=0\n", __func__);
 		return -1;
 	}
-	i=write(raopcld->sfd,raopcld->data+raopcld->wblk_wsize,raopcld->wblk_remsize);
+	i=write(raopcld->sfd,raopcld->data+raopcld->wblk_wsize,MIN(4096,raopcld->wblk_remsize));
 	if(i<0){
 		ERRMSG("%s: write error: %s\n", __func__, strerror(errno));
 		return -1;
